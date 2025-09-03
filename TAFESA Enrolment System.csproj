@@ -16,8 +16,4 @@
     <WarningLevel>2</WarningLevel>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>
