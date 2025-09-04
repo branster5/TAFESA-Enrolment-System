@@ -11,10 +11,10 @@ namespace TAFESA_Enrolment_System.Models
     /// </summary>
     internal class Person
     {
-        const string DEFAULT_NAME = "No name provided";
-        const string DEFAULT_EMAIL = "No email provided";
+        public const string DEFAULT_NAME = "No name provided";
+        public const string DEFAULT_EMAIL = "No email provided";
         //String instead of int for phone number to include special characters and spaces if required e.g. +61 432 123 456
-        const string DEFAULT_PHONE_NUMBER = "No phone number provided";
+        public const string DEFAULT_PHONE_NUMBER = "No phone number provided";
 
         public Address Address { get; set; }
         public string Name { get; set; }

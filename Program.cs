@@ -92,6 +92,31 @@ namespace TAFESA_Enrolment_System
             Console.WriteLine("Name: " + allArgPerson.Name);
             Console.WriteLine("Email: " + allArgPerson.Email);
             Console.WriteLine("Phone Number: " + allArgPerson.PhoneNumber);
+
+            // Console line gap between types:
+            Console.WriteLine("");
+            // ADDRESS:
+
+            Console.WriteLine("STUDENT TESTING: ");
+            //Test address constructors
+            Student noArgStudent = new Student();
+            List<Enrollment> testEnrollmentList = new List<Enrollment>();
+            testEnrollmentList.Add(new Enrollment());
+            Student allArgStudent = new Student(testEnrollmentList, 123, "Diploma of Advanced Programming", DateTime.UtcNow, allArgAddress, "John Doe", "test@email.com", "8290 2390");
+            testEnrollmentList.Add(allArgEnrollment);
+            Student additionalArgStudent = new Student(testEnrollmentList, 321, "Certificate of Programming", DateTime.UtcNow, allArgPerson);
+            Console.WriteLine(noArgStudent);
+            Console.WriteLine(allArgStudent);
+            Console.WriteLine(additionalArgStudent);
+
+            // Test setters and getters
+            allArgStudent.StudentID = 999;
+            allArgStudent.Program = "Diploma of Arts";
+            allArgStudent.DateRegistered = allArgStudent.DateRegistered.AddYears(-2);
+            Console.WriteLine("After updates:");
+            Console.WriteLine("Student ID: " + allArgStudent.StudentID);
+            Console.WriteLine("Program: " + allArgStudent.Program);
+            Console.WriteLine("Date Registered: " + allArgStudent.DateRegistered);
         }
     }
 }
