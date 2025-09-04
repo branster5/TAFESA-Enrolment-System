@@ -46,6 +46,28 @@ namespace TAFESA_Enrolment_System
             Console.WriteLine("Date Enrolled: " + allArgEnrollment.DateEnrolled);
             Console.WriteLine("Grade: " + allArgEnrollment.Grade);
             Console.WriteLine("Semester: " + allArgEnrollment.Semester);
+
+            // ADDRESS:
+
+            Console.WriteLine("ADDRESS TESTING: ");
+            //Test address constructors
+            Address noArgAddress = new Address();
+            Address allArgAddress = new Address(10, "Unicorn Street", "Adelaide", 5000, "SA");
+            Console.WriteLine(noArgAddress);
+            Console.WriteLine(allArgAddress);
+
+            // Test setters and getters
+            allArgAddress.StreetNum = 100;
+            allArgAddress.StreetName = "Gargoyle Street";
+            allArgAddress.Suburb = "Wallaroo";
+            allArgAddress.Postcode = 5430;
+            allArgAddress.State = "WA";
+            Console.WriteLine("After updates:");
+            Console.WriteLine("Street Number: " + allArgAddress.StreetNum);
+            Console.WriteLine("Street Name: " + allArgAddress.StreetName);
+            Console.WriteLine("Suburb: " + allArgAddress.Suburb);
+            Console.WriteLine("Postcode: " + allArgAddress.Postcode);
+            Console.WriteLine("State: " + allArgAddress.State);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace TAFESA_Enrolment_System.Models
 
         public override string ToString()
         {
-            return "SubjectCode: " + SubjectCode + " SubjectName: " + SubjectName + " Cost: " + Cost.ToString();
+            return "SubjectCode: " + SubjectCode + ", SubjectName: " + SubjectName + ", Cost: " + Cost.ToString();
         }
     }
 }
