@@ -47,6 +47,8 @@ namespace TAFESA_Enrolment_System
             Console.WriteLine("Grade: " + allArgEnrollment.Grade);
             Console.WriteLine("Semester: " + allArgEnrollment.Semester);
 
+            // Console line gap between types:
+            Console.WriteLine("");
             // ADDRESS:
 
             Console.WriteLine("ADDRESS TESTING: ");
@@ -68,6 +70,28 @@ namespace TAFESA_Enrolment_System
             Console.WriteLine("Suburb: " + allArgAddress.Suburb);
             Console.WriteLine("Postcode: " + allArgAddress.Postcode);
             Console.WriteLine("State: " + allArgAddress.State);
+
+            // Console line gap between types:
+            Console.WriteLine("");
+            // ADDRESS:
+
+            Console.WriteLine("PERSON TESTING: ");
+            //Test address constructors
+            Person noArgPerson = new Person();
+            Person allArgPerson = new Person(allArgAddress, "John Doe", "johndoe@dodo.com", "+61 440 123 456");
+            Console.WriteLine(noArgPerson);
+            Console.WriteLine(allArgPerson);
+
+            // Test setters and getters
+            allArgPerson.Address = noArgAddress;
+            allArgPerson.Name = "Not Real";
+            allArgPerson.Email = "notreal@email.com";
+            allArgPerson.PhoneNumber = "000000000";
+            Console.WriteLine("After updates:");
+            Console.WriteLine("Address: " + allArgPerson.Address);
+            Console.WriteLine("Name: " + allArgPerson.Name);
+            Console.WriteLine("Email: " + allArgPerson.Email);
+            Console.WriteLine("Phone Number: " + allArgPerson.PhoneNumber);
         }
     }
 }
