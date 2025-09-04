@@ -6,19 +6,30 @@ using System.Threading.Tasks;
 
 namespace TAFESA_Enrolment_System.Models
 {
+    /// <summary>
+    /// Repesents a singular subject to learn inside of a enrollment, with an internal code, display name and cost associated.
+    /// </summary>
     internal class Subject
     {
         const string DEF_SUBJECT_CODE = "No subject code provided";
         const string DEF_SUBJECT_NAME = "No subject name provided";
         const decimal DEF_COST = 0;
+
         public string SubjectCode { get; set; }
         public string SubjectName { get; set; }
         public decimal Cost { get; set; }
 
-        // No arg constructor
+        /// <summary>
+        /// No arg constructor (defaults)
+        /// </summary>
         public Subject() : this(DEF_SUBJECT_CODE, DEF_SUBJECT_NAME, DEF_COST) { }
 
-        // All arg constructor
+        /// <summary>
+        /// All arg constructor
+        /// </summary>
+        /// <param name="subjectCode">Unique code</param>
+        /// <param name="subjectName">Display subject name</param>
+        /// <param name="cost">Tuition cost (decimal)</param>
         public Subject(string subjectCode, string subjectName, decimal cost)
         {
             SubjectCode = subjectCode;
