@@ -11,9 +11,9 @@ namespace TAFESA_Enrolment_System.Models
     /// </summary>
     internal class Subject
     {
-        const string DEF_SUBJECT_CODE = "No subject code provided";
-        const string DEF_SUBJECT_NAME = "No subject name provided";
-        const decimal DEF_COST = 0;
+        const string DEFAULT_SUBJECT_CODE = "No subject code provided";
+        const string DEFAULT_SUBJECT_NAME = "No subject name provided";
+        const decimal DEFAULT_COST = 0;
 
         public string SubjectCode { get; set; }
         public string SubjectName { get; set; }
@@ -22,7 +22,7 @@ namespace TAFESA_Enrolment_System.Models
         /// <summary>
         /// No arg constructor (defaults)
         /// </summary>
-        public Subject() : this(DEF_SUBJECT_CODE, DEF_SUBJECT_NAME, DEF_COST) { }
+        public Subject() : this(DEFAULT_SUBJECT_CODE, DEFAULT_SUBJECT_NAME, DEFAULT_COST) { }
 
         /// <summary>
         /// All arg constructor
