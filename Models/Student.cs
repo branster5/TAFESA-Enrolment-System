@@ -97,12 +97,20 @@ namespace TAFESA_Enrolment_System.Models
         {
             if (obj == null)
                 return false;
-            if (ReferenceEquals(obj, this)) 
+            if (ReferenceEquals(obj, this))
                 return true;
             if (obj.GetType() != this.GetType())
                 return false;
             Student other = obj as Student;
             return this.StudentID == other.StudentID;
+        }
+
+        public static bool operator ==(Student a, Student b) {
+            return object.Equals(a, b);
+        }
+
+        public static bool operator !=(Student a, Student b) {
+            return !object.Equals(a, b);
         }
     }
 }

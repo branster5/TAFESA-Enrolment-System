@@ -121,11 +121,17 @@ namespace TAFESA_Enrolment_System
             Console.WriteLine("");
 
             Console.WriteLine("Test overwritten Student equals:");
-            Console.WriteLine("Not equals: ");
+            Console.WriteLine("Not equivalent students: ");
             Console.WriteLine(allArgStudent.Equals(noArgStudent));
+            Console.WriteLine(allArgStudent == noArgStudent);
+            Console.WriteLine("Test != ");
+            Console.WriteLine(allArgStudent != noArgStudent);
             Student allArgStudent2 = new Student(testEnrollmentList, 123, "Diploma of Advanced Programming", DateTime.UtcNow, allArgAddress, "Jane Doe", "test@email.com", "8290 2390");
-            Console.WriteLine("Is equals: ");
+            Console.WriteLine("Equivalent students: ");
             Console.WriteLine(allArgStudent.Equals(allArgStudent2));
+            Console.WriteLine(allArgStudent == allArgStudent2);
+            Console.WriteLine("Test != ");
+            Console.WriteLine(allArgStudent != allArgStudent2);
         }
     }
 }
