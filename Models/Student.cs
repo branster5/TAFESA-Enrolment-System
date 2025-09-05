@@ -87,5 +87,22 @@ namespace TAFESA_Enrolment_System.Models
             }
             return toStringObject;
         }
+
+        /// <summary>
+        /// Override equals for the purpose of determining if two students are the same. StudentID should remain unique to each student and be a valid identifier for if 2 students are equivalent.
+        /// </summary>
+        /// <param name="obj">Student Object to compare to this Student</param>
+        /// <returns></returns>
+        public override bool Equals(object obj)
+        {
+            if (obj == null)
+                return false;
+            if (ReferenceEquals(obj, this)) 
+                return true;
+            if (obj.GetType() != this.GetType())
+                return false;
+            Student other = obj as Student;
+            return this.StudentID == other.StudentID;
+        }
     }
 }

@@ -117,6 +117,13 @@ namespace TAFESA_Enrolment_System
             Console.WriteLine("Student ID: " + allArgStudent.StudentID);
             Console.WriteLine("Program: " + allArgStudent.Program);
             Console.WriteLine("Date Registered: " + allArgStudent.DateRegistered);
+
+            Console.WriteLine("Test overwritten Student equals:");
+            Console.WriteLine("Not equals: ");
+            Console.WriteLine(allArgStudent.Equals(noArgStudent));
+            noArgStudent.StudentID = 999;
+            Console.WriteLine("Is equals: ");
+            Console.WriteLine(allArgStudent.Equals(noArgStudent));
         }
     }
 }
