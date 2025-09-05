@@ -20,7 +20,7 @@ namespace TAFESA_Enrolment_System.Models
 
         //No setter, simply add or remove enrollments instead of replacing the list
         public List<Enrollment> Enrollments { get; }
-        public int StudentID { get; set; }
+        public int StudentID { get; private set; }
         public string Program { get; set; }
         public DateTime DateRegistered { get; set; }
 

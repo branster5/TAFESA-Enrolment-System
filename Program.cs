@@ -110,20 +110,22 @@ namespace TAFESA_Enrolment_System
             Console.WriteLine(additionalArgStudent);
 
             // Test setters and getters
-            allArgStudent.StudentID = 999;
+            //allArgStudent.StudentID = 999;
             allArgStudent.Program = "Diploma of Arts";
             allArgStudent.DateRegistered = allArgStudent.DateRegistered.AddYears(-2);
             Console.WriteLine("After updates:");
-            Console.WriteLine("Student ID: " + allArgStudent.StudentID);
+            //Console.WriteLine("Student ID: " + allArgStudent.StudentID);
             Console.WriteLine("Program: " + allArgStudent.Program);
             Console.WriteLine("Date Registered: " + allArgStudent.DateRegistered);
+
+            Console.WriteLine("");
 
             Console.WriteLine("Test overwritten Student equals:");
             Console.WriteLine("Not equals: ");
             Console.WriteLine(allArgStudent.Equals(noArgStudent));
-            noArgStudent.StudentID = 999;
+            Student allArgStudent2 = new Student(testEnrollmentList, 123, "Diploma of Advanced Programming", DateTime.UtcNow, allArgAddress, "Jane Doe", "test@email.com", "8290 2390");
             Console.WriteLine("Is equals: ");
-            Console.WriteLine(allArgStudent.Equals(noArgStudent));
+            Console.WriteLine(allArgStudent.Equals(allArgStudent2));
         }
     }
 }
