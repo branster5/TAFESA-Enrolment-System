@@ -28,7 +28,8 @@ namespace TAFESA_Enrolment_System.Models
         /// No arg constructor (defaults), taking defaults from person which it inherits
         /// </summary>
         public Student() : this(new List<Enrollment>(), DEFAULT_STUDENT_ID, DEFAULT_PROGRAM, DEFAULT_DATE_REGISTERED,
-            new Address(), DEFAULT_NAME, DEFAULT_EMAIL, DEFAULT_PHONE_NUMBER) { }
+            new Address(), DEFAULT_NAME, DEFAULT_EMAIL, DEFAULT_PHONE_NUMBER)
+        { }
 
         /// <summary>
         /// All arg constructor, second row of inputs represents those inherited from the person object
@@ -92,7 +93,7 @@ namespace TAFESA_Enrolment_System.Models
         /// Override equals for the purpose of determining if two students are the same. StudentID should remain unique to each student and be a valid identifier for if 2 students are equivalent.
         /// </summary>
         /// <param name="obj">Student Object to compare to this Student</param>
-        /// <returns></returns>
+        /// <returns>boolean representing if Student IDs match between 2 students</returns>
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -105,12 +106,35 @@ namespace TAFESA_Enrolment_System.Models
             return this.StudentID == other.StudentID;
         }
 
-        public static bool operator ==(Student a, Student b) {
+        /// <summary>
+        /// Overwrite == operator to use new Equals method
+        /// </summary>
+        /// <param name="a">Student A</param>
+        /// <param name="b">Student B</param>
+        /// <returns>boolean representing if Student IDs match between 2 students</returns>
+        public static bool operator ==(Student a, Student b)
+        {
             return object.Equals(a, b);
         }
 
-        public static bool operator !=(Student a, Student b) {
+        /// <summary>
+        /// Overwrite != operator to use new Equals method
+        /// </summary>
+        /// <param name="a">Student A</param>
+        /// <param name="b">Student B</param>
+        /// <returns>boolean representing if Student IDs match between 2 students</returns>
+        public static bool operator !=(Student a, Student b)
+        {
             return !object.Equals(a, b);
+        }
+
+        /// <summary>
+        /// A student is considered equivalent if they have the same student id to another, so the hash code is only based on StudentID
+        /// </summary>
+        /// <returns>Hash Code for StudentID</returns>
+        public override int GetHashCode()
+        {
+            return this.StudentID.GetHashCode();
         }
     }
 }

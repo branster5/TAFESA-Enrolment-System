@@ -132,6 +132,14 @@ namespace TAFESA_Enrolment_System
             Console.WriteLine(allArgStudent == allArgStudent2);
             Console.WriteLine("Test != ");
             Console.WriteLine(allArgStudent != allArgStudent2);
+
+            Console.WriteLine("HashCodes:");
+            Console.WriteLine(allArgStudent.GetHashCode());
+            Console.WriteLine(allArgStudent2.GetHashCode());
+            Console.WriteLine(allArgStudent.GetHashCode() == allArgStudent2.GetHashCode());
+            Console.WriteLine(noArgStudent.GetHashCode());
+            Console.WriteLine(allArgStudent.GetHashCode());
+            Console.WriteLine(noArgStudent.GetHashCode() == allArgStudent.GetHashCode());
         }
     }
 }
