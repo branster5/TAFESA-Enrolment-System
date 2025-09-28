@@ -9,7 +9,7 @@ namespace TAFESA_Enrolment_System.Models
     /// <summary>
     /// An individual within the TAFE System, to store contact info including name, email, phone number and address. Currently only inherited by the Student model.
     /// </summary>
-    internal class Person
+    public class Person
     {
         public const string DEFAULT_NAME = "No name provided";
         public const string DEFAULT_EMAIL = "No email provided";

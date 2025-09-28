@@ -12,7 +12,7 @@ namespace TAFESA_Enrolment_System.Models
     /// adding TAFE student specific data including student id, program being studied, date registered 
     /// and a list of enrollments the student is studying
     /// </summary>
-    internal class Student : Person
+    public class Student : Person, IComparable<Student>
     {
         const int DEFAULT_STUDENT_ID = 0;
         const string DEFAULT_PROGRAM = "No program given given";
@@ -135,6 +135,40 @@ namespace TAFESA_Enrolment_System.Models
         public override int GetHashCode()
         {
             return this.StudentID.GetHashCode();
+        }
+
+        /// <summary>
+        /// Student is compared only using StudentID
+        /// </summary>
+        public int CompareTo(Student other)
+        {
+            if (other is null) return 1; // non-null > null
+            // Primary key comparison
+            return this.StudentID.CompareTo(other.StudentID);
+        }
+
+        public static bool operator <(Student a, Student b)
+        {
+            if (a is null) return b is not null; // null < non-null
+            return a.CompareTo(b) < 0;
+        }
+
+        public static bool operator >(Student a, Student b)
+        {
+            if (a is null) return false; // null is never >
+            return a.CompareTo(b) > 0;
+        }
+
+        public static bool operator <=(Student a, Student b)
+        {
+            if (a is null) return true;  // null <= anything
+            return a.CompareTo(b) <= 0;
+        }
+
+        public static bool operator >=(Student a, Student b)
+        {
+            if (a is null) return b is null; // null >= null only
+            return a.CompareTo(b) >= 0;
         }
     }
 }

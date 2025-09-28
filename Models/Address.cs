@@ -9,7 +9,7 @@ namespace TAFESA_Enrolment_System.Models
     /// <summary>
     /// Residential address for any person, as part of contact information
     /// </summary>
-    internal class Address
+    public class Address
     {
         const int DEFAULT_STREET_NUM = 0;
         const string DEFAULT_STREET_NAME = "No street name given";

@@ -9,7 +9,7 @@ namespace TAFESA_Enrolment_System.Models
     /// <summary>
     /// Repesents a singular subject to learn inside of a enrollment, with an internal code, display name and cost associated.
     /// </summary>
-    internal class Subject
+    public class Subject
     {
         const string DEFAULT_SUBJECT_CODE = "No subject code provided";
         const string DEFAULT_SUBJECT_NAME = "No subject name provided";

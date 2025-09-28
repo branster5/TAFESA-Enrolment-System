@@ -9,7 +9,7 @@ namespace TAFESA_Enrolment_System.Models
     /// <summary>
     /// Represents a singular subject enrolled for each student, containing the date enrolled, grade received (null for no grade yet) and semester for which the subject belongs to for this student.
     /// </summary>
-    internal class Enrollment
+    public class Enrollment
     {
         static readonly DateTime DEFAULT_DATE_ENROLLED = DateTime.MinValue;
         const string? DEFAULT_GRADE = null;
