@@ -63,15 +63,22 @@ namespace TAFESA_Enrolment_System.DataStructures
         /// </remarks>
         public void AddFirst(SingleLinkedNode<T> node)
         {
-            var temp = Head;     // keep current head
-            Head = node;         // point head to new node
-            Head.Next = temp;    // chain old list after new head
+            // keep current head
+            var temp = Head;
 
+            // point head to new node
+            Head = node;
+
+            // chain old list after new head
+            Head.Next = temp;
+
+            // if first insert, Tail becomes Head
             Count++;
-            if (Count == 1) Tail = Head; // first insert -> Tail follows Head
+            if (Count == 1)
+            {
+                Tail = Head;
+            }
         }
-
-        // -------------------- AddLast --------------------
 
         /// <summary>
         /// Add a value at the end
@@ -94,13 +101,18 @@ namespace TAFESA_Enrolment_System.DataStructures
         /// </remarks>
         public void AddLast(SingleLinkedNode<T> node)
         {
-            if (Count == 0) Head = node;
-            else Tail!.Next = node;
+            if (Count == 0)
+            {
+                Head = node;
+            }
+            else
+            {
+                Tail!.Next = node;
+            }
 
             Tail = node;
             Count++;
         }
-
 
         /// <summary>
         /// Remove the first node
@@ -117,8 +129,13 @@ namespace TAFESA_Enrolment_System.DataStructures
             if (Count != 0)
             {
                 Head = Head!.Next;
+
                 Count--;
-                if (Count == 0) Tail = null;
+
+                if (Count == 0)
+                {
+                    Tail = null;
+                }
             }
         }
 
@@ -142,19 +159,28 @@ namespace TAFESA_Enrolment_System.DataStructures
                 }
                 else
                 {
+                    // walk to the node before tail
                     var current = Head!;
                     while (current.Next != Tail)
+                    {
                         current = current.Next!;
+                    }
 
-                    current.Next = null; // unlink old tail
-                    Tail = current;      // new tail
+                    // unlink old tail
+                    current.Next = null;
+
+                    // set new tail
+                    Tail = current;
                 }
 
                 Count--;
             }
         }
 
-        public void Add(T item) => AddFirst(item);
+        public void Add(T item)
+        {
+            AddFirst(item);
+        }
 
         /// <summary>
         /// Clear the list (Head/Tail to null, Count to 0)
@@ -183,7 +209,9 @@ namespace TAFESA_Enrolment_System.DataStructures
             while (current != null)
             {
                 if (Equals(current.Value, item))
+                {
                     return true;
+                }
                 current = current.Next;
             }
             return false;
@@ -234,14 +262,23 @@ namespace TAFESA_Enrolment_System.DataStructures
                 {
                     if (prev == null)
                     {
+                        // removing the head
                         RemoveFirst();
                     }
                     else
                     {
+                        // bypass current
                         prev.Next = cur.Next;
-                        if (cur.Next == null) Tail = prev; // fixed tail if we removed the last node
+
+                        // fixed tail if we removed the last node
+                        if (cur.Next == null)
+                        {
+                            Tail = prev;
+                        }
+
                         Count--;
                     }
+
                     return true;
                 }
 
@@ -253,7 +290,7 @@ namespace TAFESA_Enrolment_System.DataStructures
         }
 
         /// <summary>
-        /// Enumerate values from Head to Tail
+        /// Enumerate (traverse) values from Head to Tail
         /// </summary>
         public IEnumerator<T> GetEnumerator()
         {
