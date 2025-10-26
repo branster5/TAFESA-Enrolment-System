@@ -92,7 +92,7 @@ namespace TAFESA_Enrolment_System.Utilities
             {
                 while (min <= max)
                 {
-                    mid = min + ((max + min) / 2);
+                    mid = min + ((max - min) / 2);
                     //possible replace to target.CompareTo(array[mid])
                     int compareValue = array[mid].CompareTo(target);
                     if (compareValue == 0)
@@ -102,7 +102,8 @@ namespace TAFESA_Enrolment_System.Utilities
                     else
                         max = mid - 1;
                 }
-                return -1;  // -1 is returned when not found
+                return -1; 
+                // -1 is returned when not found
             }
             catch (Exception ex)
             {
