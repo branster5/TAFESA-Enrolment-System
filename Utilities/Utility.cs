@@ -63,6 +63,7 @@ namespace TAFESA_Enrolment_System.Utilities
         /// <typeparam name="T">Any comparable type</typeparam>
         /// <param name="array">Sorted (ascending) array</param>
         /// <param name="target">Value to search for</param>
+        /// /// <param name="checkSort">Boolean for checking if array is provided sorted (default true)</param>
         /// <returns>Either the index of the target in the array, or -1 if the target is not found</returns>
         /// <remarks>
         /// Pseudocode=
@@ -74,11 +75,14 @@ namespace TAFESA_Enrolment_System.Utilities
         ///     else max = mid - 1
         /// return -1 if while loop ends and the target is not found
         /// </remarks>
-        public static int BinarySearchArray<T>(T[] array, T target) where T : IComparable<T>
+        public static int BinarySearchArray<T>(T[] array, T target, bool checkSort = true) where T : IComparable<T>
         {
             ArgumentNullException.ThrowIfNull(array);
 
-            EnsureSortedAscending(array);
+            if (checkSort)
+            {
+                EnsureSortedAscending(array);
+            }
 
             int min = 0;
             int max = array.Length - 1;
@@ -88,7 +92,7 @@ namespace TAFESA_Enrolment_System.Utilities
             {
                 while (min <= max)
                 {
-                    mid = min + ((max - min) / 2);
+                    mid = min + ((max + min) / 2);
                     //possible replace to target.CompareTo(array[mid])
                     int compareValue = array[mid].CompareTo(target);
                     if (compareValue == 0)
